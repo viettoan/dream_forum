@@ -1,1 +1,593 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background: #e9ebee;
+}
+a:hover {
+    text-decoration: none;
+}
+i {
+    padding: 0px 5px;
+}
+/*********************************************/
+/*               NAVIGATION                  */
+/*********************************************/
+nav {
+	background: #3b5998 !important;
+}
+nav ul {
+    margin:0px;
+}
+nav li:hover {
+    background: #324b81;
+}
+nav a {
+    color: #fff !important;
+}
+nav a i {
+    color: #333 !important;
+}
+nav .navbar-right  span{
+    display: block;
+    margin: 5px 10px;
+    padding:10px;
+}
+nav .navbar-right  span i {
+    color: #333;
+}
+#search-form {
+    margin: 8px 0px 5px 40px !important;
+    padding: 0px !important;
+}
+#search-form .form-group {
+    margin: 0px !important;
+}
+#search-form input {
+    border-radius: 1px;
+}
+#search-form #search-button {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 50px;
+    background: #f6f7f9;
+    border: none;
+    border-radius: 0px;
+}
+#search-form #search-button:hover {
+    background: #e0e4eb;
+}
+.menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left:0px;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #e0e4eb;
+    padding: 5px 10px;
+}
+.menu li {
+    padding: 5px;
+    margin: 0px;
+    border-bottom: 1px solid #e0e4eb; 
+}
+.menu li:hover {
+    background: #e0e4eb;
+}
+.menu img {
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+}
+.menu a {
+    color: #333 !important;
+}
+.forum {
+    padding: 15px;
+}
+.forum >a {
+    display: block;
+    padding: 0px !important;
+}
+.forum:hover .menu{
+    display: block;
+}
+nav .user {
+    padding:10px;
+}
+nav .user img{
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+}
+nav .user > div {
+    padding: 0px 5px;
+}
+.user-name {
+    padding: 5px 0px !important;
+}
+/************************************************/
+/*                 SIDEBAR                      */
+/************************************************/
+.sidebar{
+    padding: 0px !important;
+}
+.sidebar section {
+    background: #fff;
+    margin: 0 20px 20px 0px;
+    border-radius: 1px;
+    padding: 10px;
+}
+.sidebar section .title a{
+    display: block;
+    padding : 10px !important;
+    font-weight: bold;
+    color: #333;
+    font-size: 150%;
+    line-height: 100%;
+}
+.sidebar section .title img{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;  
+}
+.sidebar section .title a:hover{
+    text-decoration: underline;
+}
+.sidebar section .title {
+    border-bottom: 1px solid #d3e0e9;
+    margin-bottom: 20px;
+}
+.sidebar > h3 {
+    margin-left: 80px;
+}
+/*********************************************/
+/*               HOME SIDEBAR                */
+/*********************************************/
+.home-sidebar {
+    margin-top: 70px;
+}
+.home-sidebar section {
+    margin-left: 80px;
+}
+.hot-bloger li {
+    margin: 0px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #d3e0e9;
+}
+.hot-bloger img {
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+    margin: 0px 20px;
+}
+.hot-bloger li .user-name h3 {
+    margin-top: 10px !important;
+}
+.hot-bloger li div {
+    padding: 0px;
+}
+.hot-bloger li .user-name button{
+    margin-left: 10px;
+}
+.info-hot-bloger p {
+    margin-top: 5px;
+}
+.hot-post a {
+    display: block;
+    padding: 0px;
+    font-weight: bold;
+    border-bottom: 1px solid #d3e0e9;
+    margin-bottom: 5px;
+}
+.hot-post i {
+    margin-left: 45px;
+}
+/*********************************************/
+/*               HOME CONTENT                */
+/*********************************************/
+#content {
+    margin-top: 70px;
+}
+article header img {
+    padding: 0px !important;
+    width: 50px !important;
+    height: 50px !important;
+}
+article {
+    background: #fff;
+    margin-bottom: 20px;
+    padding : 10px 20px;
+}
+article header{
+    padding: 15px;
+}
+article .position {
+    padding-top : 15px;
+    color :#bcc3c4;
+}
+article .position time,a {
+    padding: 0px 10px;
+}
+article .thread-image img {
+    max-height: 500px;
+}
+article .title h3 {
+    margin-top: 11px !important;
+}
+article .title h3 a {
+    padding: 0px !important;   
+}
+article .action {
+    padding: 10px;
+    border-top: 1px solid #d4d8de;
+}
+article .action a {
+    color:#333;
+}
+ article .action a:hover {
+    text-decoration: underline;
+}
+article .action i {
+    padding: 0px 5px;
+}
+article .action .fa-comment-o {
+    color : #f70961;
+}
+article .action .fa-thumbs-up:hover,.fa-share-alt:hover {
+    color : #395693;
+}
+article .info-action-post {
+    padding :0px 15px;
+}
+article .info-action-post a {
+    color: #898f9c ;
+}
+article .info-action-post a:hover {
+    text-decoration: underline;
+}
+.user-name h3 {
+    margin: 10px !important;
+}
+/*********************************************/
+/*               USER CONTENT                */
+/*********************************************/
+.user-wall {
+    padding: 0px; 
+    margin-top: 47px;
+}
+.cover-image {
+    padding: 0px !important;
+    max-height: 400px;
+}
+.nav-user {
+    border:1px solid #d3e0e9;
+    background: #fff !important;
+    margin-bottom: 20px;
+}
+.user-avatar img{
+    position: absolute;
+    bottom: -25px;
+    left: 20px;
+    width: 200px;
+    height: 200px;
+}
+.nav-user ul li {
+    padding: 0px;
+    border-right:1px solid #d3e0e9;
+}
+.nav-user ul li a {
+    display: block;
+    font-weight: bold;
+    color: #333 !important;
+    margin: 0px 0px 0px -5px !important;
+    padding: 10px 30px !important;
+}
+.nav-user ul li a:hover {
+    background:#e0e4eb !important;
+}
+
+/*************************************************/
+/*                 CONTENT USER                  */
+/*************************************************/
+.content-user {
+    padding: 0px !important;
+}
+
+/*************************************************/
+/*                 PROFILE USER                  */
+/*************************************************/
+.profile {
+    padding: 0px;
+}
+.profile .panel-heading {
+    background: #f6f7f9;
+    margin: 0px !important;
+}
+.profile .panel-heading h3{
+   font-weight: bold;
+}
+.profile .panel-body {
+    padding-left: 0px;
+}
+.list-profile {
+    
+    padding-left: 0px;
+}
+.list-profile ul li {
+    padding: 5px 0px;
+    margin: 0px;
+}
+.list-profile ul .active>a,
+.list-profile ul .active>a:hover {
+    border-radius: 0px;
+    color: #333;
+    font-weight: bold;
+    border-left: 3px solid #333;
+    background: #fff !important;
+}
+.list-profile ul a:hover {
+    color: #333;
+    font-weight: bold;
+    background: #fff !important;
+}
+.content-profile {
+    min-height: 300px;
+    border-left: 1px solid #d3e0e9;
+}
+.content-profile ul li {
+    border-bottom: 1px solid #d3e0e9;
+}
+.content-profile ul li>div {
+    padding:10px;
+    margin:10px 0px;
+}
+.content-profile ul li>div:hover {
+    background:#e0e4eb !important;
+}
+.content-profile img{
+    width:30px;
+    height:30px;
+    margin-right:10px;
+}
+.quick-contact {
+    padding: 20px;
+}
+.quick-contact li {
+    border: none !important;
+    padding: 8px;
+}
+.add-infomation {
+    padding: 0px;
+}
+.content-profile article header {
+    border-bottom: 1px solid #d3e0e9;
+    margin-bottom :20px;
+}
+.content-profile article header p {
+    margin: 0px;
+}
+.plus-content {
+    border : 1px dashed #216a94;
+    color: #216a94;
+    padding: 10px;
+    margin-right: 10px;
+    line-height: 100%;
+}
+.plus-content i {
+    margin-left: 5px;
+}
+/**********************************************************/
+/*                      FRIENDS                           */
+/**********************************************************/
+.friends {
+    padding: 0px;
+}
+.friends .panel-heading {
+    background: #f6f7f9;
+    margin: 0px !important;
+}
+.friends .panel-heading > div {
+    padding-top:20px !important;
+}
+.friends .panel-heading > div form i{
+    display: block;
+    margin-top: -25px;
+    border-left: 1px solid #bbcfdd;
+    padding: 0px 10px !important;
+    color: #ccd0d2;
+}
+.friend-item {
+    border: 1px solid #bbcfdd;
+    margin: 15px 0px;
+}
+.friend-item img {
+    padding: 0px;
+    width: 100px;
+    height: 100px;
+}
+.friend-item >div {
+    margin: 25px 0px;
+    padding-right: 0px;
+}
+.friend-item >div a {
+    padding: 0px;
+    font-weight: bold;
+}
+
+/**********************************************************/
+/*                      ALBUM                             */
+/**********************************************************/
+.album .panel-heading {
+    background: #f6f7f9;
+    margin: 0px !important;
+}
+.album .panel-heading > div {
+    padding-top:20px !important;
+}
+.album .panel-heading > div button{
+    border-radius: 0px;
+}
+
+/**********************************************************/
+/*                     HOME FORUM                         */
+/**********************************************************/
+#forum {
+    padding:50px 100px;
+    background: #fff;
+    margin-top: 50px;
+}
+#forum section {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.thread-cover {
+    width: 300px;
+    height: 300px;
+}
+.info-thread {
+    background: #f9d9b0;
+    padding: 10px 10px 0px 10px;
+    border: 1px solid #f9bc6d;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+.info-thread ul {
+    margin-bottom: 0px;
+}
+.info-thread h3 {
+    margin-top: 0px;
+    color: #333;
+}
+.sub-thread {
+    border-left: 1px solid #bbcfdd;
+    min-height: 300px;
+}
+.sub-thread > ul li{
+    padding : 10px 0px;
+    border-bottom : 1px solid #bbcfdd;
+}
+.sub-thread > ul li > div {
+    padding: 0px;
+}
+.sub-thread >ul li a {
+    font-weight: bold;
+    color: #333;
+}
+.thread-new-post {
+    padding:5px 15px;
+}
+.thread-new-post li img {
+    width: 50px;
+    height: 50px; 
+    padding: 0px;
+}
+.thread-new-post li a, p, div{
+    padding:0px;
+    margin: 0px;
+}
+.thread-new-post a:hover {
+    text-decoration: underline;
+    color: #3b5998;
+}
+
+/*******************************************************/
+/*                    LOGIN                            */
+/*******************************************************/
+.account {
+    margin: 0 auto !important;
+    min-width: 350px;
+    max-width: 450px;
+    padding: 45px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+.account form {
+    margin-top: 5px;
+}
+.account form label {
+    font-weight: normal;
+}
+.account form input[type=text], input[type=email], input[type=password], input[type=textarea] {
+    border: none !important;
+    display: block;
+    border-bottom: 1px solid #ccc !important;
+    margin: 10px 0px;
+    padding: 0px;
+}
+.account form .form-group {
+    margin:20px 0px 10px 0px !important;
+}
+.account form input:focus {
+    outline: none;
+    border-bottom: 2px solid #4060a5 !important;
+}
+.account form .btn {
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    border: none !important;
+    background: #2196f3;
+    margin-top: 20px;
+}
+
+/****************************************************************/
+/*                      SIDEBAR ADMIN                           */
+/****************************************************************/
+.sidebar-admin {
+  background: #465053;
+  color: #fff;
+  width: 250px;
+  position: fixed;
+  top: 48px;
+  left: 0px;
+  height: 100%;
+}
+.sidebar-admin header {
+    color: #333;
+    background: #fff;
+    min-height: 50px;
+    padding: 10px;
+}
+.sidebar-admin ul > p {
+    color: #ffffff;
+    padding: 10px 0px;
+    background: #3b5998;
+    font-weight: bold;
+}
+.sidebar-admin ul li a {
+    color: #fff;
+    display: block;
+}
+.sidebar-admin i {
+    margin-right: 10px; 
+}
+.sidebar-admin ul li {
+    padding: 10px;
+}
+.sidebar-admin ul li:hover {
+    background: #525d60; 
+}
+.sidebar-admin .fa-angle-down {
+    margin: 0px;
+}
+.sidebar-admin .submenu li {
+    padding-left: 30px;
+}
+.sidebar-admin .submenu li:hover {
+    background: #525d60 !important;
+}
+
+/***************************************************/
+/*                  CONTENT ADMIN                  */
+/***************************************************/
+.content-admin {
+    margin-top: 70px;
+    margin-left: 250px;
+}
+.content-admin .count {
+    color: #676a6c;
+}
+
+.content-admin .count h1 {
+    font-weight: normal !important;
+}
