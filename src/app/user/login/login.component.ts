@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {UserService} from '../../user.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import {UserService} from '../../user.service';
 
 export class LoginComponent implements OnInit {
   validateForm: FormGroup;
-  constructor(fb: FormBuilder, private userService: UserService) { 
+  constructor(fb: FormBuilder, private userService: UserService, private router: Router) { 
   	this.validateForm = fb.group({
             'email' : [null, Validators.compose([Validators.email])],
             'password' : [null, Validators.compose([Validators.minLength(6)])]
@@ -21,12 +22,16 @@ export class LoginComponent implements OnInit {
   }
 
   submitForm(value: any) {
-  console.log(value);
     this.userService.login(value)
       .subscribe(
-        (res) => {
-          console.log(res);
-        }
+        response => {
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('username', response.user);
+          var isLoggedin = localStorage.setItem('isLoggedin', 'true');
+          this.router.navigate(['']);
+
+        },
+        error => console.log(error)
       );
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { UserService } from "../../user.service";
 import {User} from '../../user';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -12,16 +13,12 @@ export class RegisterComponent implements OnInit {
     validateForm: FormGroup;
     users: User[];
 
-    constructor(fb: FormBuilder, private userService: UserService){
+    constructor(fb: FormBuilder, private userService: UserService, private router: Router){
         this.validateForm = fb.group({
             'name' : [null, Validators.compose([Validators.required])],
             'email' : [null, Validators.compose([Validators.email])],
-            'password' : [null, Validators.compose([Validators.minLength(6)])]
-        })
-        this.userService.getAccessToken()
-            .subscribe(data => {
-                this.getUsers(data.access_token)
-            });
+            'password' : [null, Validators.compose([Validators.required, Validators.minLength(6)])]
+        });
     }
 
     ngOnInit() {
@@ -29,17 +26,11 @@ export class RegisterComponent implements OnInit {
     submitForm(value: any) {
         this.userService.register(value)
           .subscribe(
-            (res) => {
-              console.log(res);
+            (response) => {
+              if(response.status == 201) {
+                this.router.navigate(['/login']);
+              }
             }
           );
       }
-    getUsers(accessToken: string) {
-        this.userService.getUsers(accessToken)
-            .subscribe(
-                users => {
-                    this.users = users;
-                    console.log(users);
-                });
-    }
 }

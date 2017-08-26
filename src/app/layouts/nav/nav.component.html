@@ -10,7 +10,7 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" routerLink="">
+            <a class="navbar-brand" routerLink="/home">
                 Dream
             </a>
         </div>
@@ -20,7 +20,7 @@
             <div class="navbar-left col-md-7">
                 <ul class="nav navbar-nav col-md-4">
                     <li class="forum">
-                        <a routerLink="forum" >FORUM</a>
+                        <a routerLink="/forum" >FORUM</a>
                         <ul class="list-unstyled menu" >
                             <li class="row">
                                 <img src="assets/images/event.png" class="col-md-3">
@@ -56,7 +56,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a routerLink="" >NEWS</a></li>
+                    <li><a routerLink="/home" >NEWS</a></li>
                 </ul>
                 <form class="col-md-7" id="search-form" role="search">
                     <div class="form-group ">
@@ -68,10 +68,12 @@
             
 
             <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right notification">
-                <li><a routerLink="login">LOGIN</a></li>
-                <li><a routerLink="register">REGISTER</a></li>
-                <!-- <li class="row user">
+            <ul class="nav navbar-nav navbar-right notification " *ngIf = "!showInfoUser">
+                <li><a routerLink="/login">LOGIN</a></li>
+                <li><a routerLink="/register">REGISTER</a></li>
+            </ul>
+             <ul class="nav navbar-nav navbar-right notification " *ngIf = "showInfoUser">
+                <li class="row user">
                     <div  class="col-md-3"><img src="assets/images/huonggiang.jpg"></div>
                     <div class="col-md-9 user-name"><a routerLink="/user">Viet Toan</a></div>
                 </li>
@@ -83,7 +85,7 @@
                 </li>
                 <li>
                   <span><i class="fa fa-globe fa-lg" aria-hidden="true"></i></span>
-                </li> -->
+                </li>
             </ul>
         </div>
     </div>
