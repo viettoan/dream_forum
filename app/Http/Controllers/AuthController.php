@@ -29,28 +29,18 @@ class AuthController extends Controller
             'email' => $request->input('user.email'),
             'password' => bcrypt($request->input('user.password')),
         ];
-        
-        $user = $this->user->store($input);
-        $data['user'] = $user->name;
-
-        $param = [
-            'grant_type' => 'password',
-            'client_id' => env('API_PASSWORD_CLIENT_ID'),
-            'client_secret' => env('API_PASSWORD_CLIENT_SECRET'),
-            'username' => $request->input('user.email'),
-            'password' => $request->input('user.password'),
-            'scope' => '*',
-        ];
-
-        $request->request->add($param);
-        $proxy = Request::create('oauth/token', 'POST');
-        $data['token'] = json_decode(Route::dispatch($proxy)->getContent());
-        $response['data'] = $data;
-        $response['message'] = 'Created !';
-        $response['error'] = false;
+        try {
+            $user = $this->user->store($input);
+        } catch (\Exception $e) {
+            $response['error'] = true;
+            $response['status'] = 403;
+            $response['message'] = "Register failed!";
+            return response()->json($response, $response['status']);
+        }
         $response['status'] = 201;
-
+        $response['message'] = "Register successfully!";
         return response()->json($response, $response['status']);
+        
     }
     
     public function login(Request $request)
@@ -73,7 +63,7 @@ class AuthController extends Controller
         	return response()->json($response, $response['status']);
         }
 
-        $data['user'] = $request->input['user.email'];
+        $data['user'] = Auth::user()->name;
         $param = [
         	'grant_type' => 'password',
         	'client_id' => env('API_PASSWORD_CLIENT_ID'),
