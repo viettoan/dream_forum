@@ -14,6 +14,7 @@ export class UserService {
     private oauthUrl = "http://localhost:8000/oauth/token";
     private registerUrl = "http://localhost:8000/api/register";
     private loginUrl = "http://localhost:8000/api/login";
+    private logoutUrl = "http://localhost:8000/api/logout";
 
     register(user: any[]) {
         var headers = new Headers({
@@ -45,5 +46,20 @@ export class UserService {
                     return {user: user, token: token};
                 }
             );
+    }
+
+    logout(token: string): Observable<any>{
+        var headers = new Headers({
+            "Accept": "application/json",
+            "Authorization": "Bearer " + token,
+        });
+
+        var body = JSON.stringify({token: token});
+
+        return this.http.get(this.logoutUrl, {headers: headers})
+            .map(
+                (response: Response) => response.json()
+            )
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 }
