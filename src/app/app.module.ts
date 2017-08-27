@@ -29,12 +29,14 @@ import { RegisterComponent } from './user/register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { SidebarAdminComponent } from './admin/component/sidebar-admin/sidebar-admin.component';
 import { ContentAdminComponent } from './admin/component/content-admin/content-admin.component';
+import { LogoutComponent } from './user/logout/logout.component';
 
 const appRoutes: Routes = [
     { path: '', component: AppComponent, 
       children: [
         { path: '', redirectTo: 'home', pathMatch: 'full' },
         { path: 'home', component: HomeComponent },
+        { path: 'logout', component: LogoutComponent },
         { path: 'forum', component: ForumComponent },
         { path: 'user', component: UserComponent,
         children: [
@@ -75,7 +77,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     AdminComponent,
     SidebarAdminComponent,
-    ContentAdminComponent
+    ContentAdminComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

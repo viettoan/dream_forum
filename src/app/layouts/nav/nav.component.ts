@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../auth.service';
-import {CookieService} from 'angular2-cookie/core';
+import { UserService } from '../../user.service';
+import { CookieService } from 'angular2-cookie/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,18 +10,30 @@ import {CookieService} from 'angular2-cookie/core';
 })
 export class NavComponent implements OnInit {
     showInfoUser: boolean = false;
-    username: string;
-    constructor() {
+    token: string;
+    constructor( private userService: UserService, private router: Router ) {
 
     }
 
     ngOnInit() {  
-      var token = localStorage.getItem('token');
+      this.token = localStorage.getItem('token');
       var user = localStorage.getItem('username');
       var isLoggedin = localStorage.getItem('isLoggedin');
-      if (token && user && isLoggedin == 'true') {
+      if (this.token && user && isLoggedin == 'true') {
         this.showInfoUser = true;
       }
-      console.log(this.showInfoUser);
+    }
+
+    logout() {
+      this.userService.logout(this.token)
+        .subscribe(
+          response => {
+            localStorage.clear();
+            localStorage.setItem('isLoggedin', 'false');
+            this.showInfoUser = false;
+            this.router.navigate(['']);
+          },
+          error => console.log(error)
+        );
     }
 }
