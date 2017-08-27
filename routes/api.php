@@ -19,6 +19,10 @@ Route::post('/register', [
 Route::post('/login', [
 	'uses' => 'AuthController@login'
 ]);
+Route::get('/logout', [
+	'uses' => 'AuthController@logout'
+])->middleware('auth:api');
+
 Route::get('/users', function (Request $request) {
     return response()->json(\App\Models\User::all());
 })->middleware('auth:api');

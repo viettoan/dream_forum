@@ -81,4 +81,16 @@ class AuthController extends Controller
         $response['status'] = 200;
         return response()->json($response, $response['status']);
     }
+
+    public function logout(Request $request)
+    {
+        $request->user()->token()->revoke();
+
+        $response = [
+            'success' => true,
+            'code' => 200,
+            'message' => 'You are Logged out.',
+        ];
+        return response()->json($response, '200');
+    }
 }
